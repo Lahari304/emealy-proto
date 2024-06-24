@@ -36,6 +36,7 @@
             <artifactId>tomcat-jasper</artifactId>
             <version>10.1.16</version>
         </dependency>
+        <!-- for DB -->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
@@ -50,13 +51,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-<!--            <version>42.7.3</version>-->
+            <version>42.7.3</version>
         </dependency>
-
+        <!-- for DB -->
 
     </dependencies>
 
