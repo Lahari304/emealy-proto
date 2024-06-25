@@ -20,7 +20,7 @@ public class IngredientService {
     IngredientRepo ingredientRepo;
     Logger logger = LogManager.getLogger(IngredientService.class);
 
-    public List<Ingredient> addIngredients(String mealName, List<String> ingredients){
+    public List<String> addIngredients(String mealName, List<String> ingredients){
 
         for(String ingredient:ingredients){
             if(!checkForIngredient(mealName, ingredient)) {
@@ -33,7 +33,7 @@ public class IngredientService {
         return getMealIngredients(mealName);
     }
 
-    public List<Ingredient> removeIngredients(String mealName, List<String> ingredients){
+    public List<String> removeIngredients(String mealName, List<String> ingredients){
         for(String ingredient:ingredients){
             if(checkForIngredient(mealName, ingredient)){
                 UUID ingId = getIngredientIdByName(ingredient);
@@ -56,10 +56,8 @@ public class IngredientService {
         return ingredientRepo.getIngredientIdByName(name);
     }
 
-    public List<Ingredient> getMealIngredients(String mealName){
+    public List<String> getMealIngredients(String mealName){
         List<UUID> ingIds = ingredientsListRepo.getMealIngredientIds(mealName);
-
-
-        return ingredientRepo.findAllById(ingIds);
+        return ingredientRepo.getIngredientNameById(ingIds);
     }
 }
