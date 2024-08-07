@@ -8,14 +8,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class MealController {
 
     @Autowired
     MealService mealService;
 
-    @RequestMapping({"/", "home"})
+    @RequestMapping({"test"})
     public String home(){
-        return "home";
+        return "test";
     }
 
     @PostMapping("addMeal")
