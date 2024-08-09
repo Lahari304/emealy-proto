@@ -25,11 +25,14 @@ export default function Meal() {
     }
 
     useEffect(()=>{
-        fetch("http://localhost:8080/allMeals")
-        .then(res=>res.json())
-        .then((result)=>{
-        setMeals(result);
-        })
+            fetch("http://localhost:8080/allMeals")
+                .then(res=>res.json())
+                .then((result)=>{
+                setMeals(result);
+        }).catch((error) =>{
+                      console.error('Error fetching data:', error);
+                      alert('Failed to fetch. Please make sure backend server is running.');
+                      })
     },[])
 
   return (
