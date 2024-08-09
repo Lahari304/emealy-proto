@@ -1,4 +1,4 @@
-package com.emealy.proto.emealyproto.model;
+package com.emealy.be.emealybe.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.emealy.proto.emealyproto.model;
+package com.emealy.be.emealybe.model;
 
 public enum MealType {
     BREAKFAST,

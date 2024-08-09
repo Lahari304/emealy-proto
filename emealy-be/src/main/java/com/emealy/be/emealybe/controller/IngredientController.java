@@ -1,6 +1,6 @@
-package com.emealy.proto.emealyproto.controller;
+package com.emealy.be.emealybe.controller;
 
-import com.emealy.proto.emealyproto.service.IngredientService;
+import com.emealy.be.emealybe.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

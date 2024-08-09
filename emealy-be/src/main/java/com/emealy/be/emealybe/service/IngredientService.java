@@ -1,9 +1,9 @@
-package com.emealy.proto.emealyproto.service;
+package com.emealy.be.emealybe.service;
 
-import com.emealy.proto.emealyproto.model.Ingredient;
-import com.emealy.proto.emealyproto.model.IngredientsList;
-import com.emealy.proto.emealyproto.repo.IngredientRepo;
-import com.emealy.proto.emealyproto.repo.IngredientsListRepo;
+import com.emealy.be.emealybe.model.Ingredient;
+import com.emealy.be.emealybe.model.IngredientsList;
+import com.emealy.be.emealybe.repo.IngredientRepo;
+import com.emealy.be.emealybe.repo.IngredientsListRepo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class IngredientService {
                 UUID ingId = getIngredientIdByName(ingredient);
                 ingredientsListRepo.saveAndFlush(new IngredientsList(mealName, ingId));
             }
-            else logger.debug("Ingredient "+ingredient+" is already present. Ignoring..");
+            else logger.debug("Ingredient is already present. Ignoring..");
         }
 
         return getMealIngredients(mealName);
@@ -39,7 +39,7 @@ public class IngredientService {
                 UUID ingId = getIngredientIdByName(ingredient);
                 ingredientsListRepo.deleteById(mealName+ingId.toString());
             }
-            else logger.debug("Ingredient "+ingredient+" not found. Try again.");
+            else logger.debug("Ingredient not found. Try again.");
         }
 
         return getMealIngredients(mealName);

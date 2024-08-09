@@ -1,6 +1,6 @@
-package com.emealy.proto.emealyproto.repo;
+package com.emealy.be.emealybe.repo;
 
-import com.emealy.proto.emealyproto.model.IngredientsList;
+import com.emealy.be.emealybe.model.IngredientsList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.emealy.proto.emealyproto.model;
+package com.emealy.be.emealybe.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

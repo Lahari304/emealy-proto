@@ -1,7 +1,7 @@
-package com.emealy.proto.emealyproto.service;
+package com.emealy.be.emealybe.service;
 
-import com.emealy.proto.emealyproto.model.Meal;
-import com.emealy.proto.emealyproto.repo.MealRepo;
+import com.emealy.be.emealybe.repo.MealRepo;
+import com.emealy.be.emealybe.model.Meal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
