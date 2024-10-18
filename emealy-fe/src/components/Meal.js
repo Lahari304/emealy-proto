@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import {Container, Paper, Button} from '@mui/material';
+import {Button, Container, FormControl, InputLabel, Paper, Select} from '@mui/material';
+import MenuItem from "@mui/material/MenuItem";
 
 export default function Meal() {
     const paperStyle = {padding:'50px 20px', width:600, margin:"20px auto"}
@@ -38,7 +39,7 @@ export default function Meal() {
   return (
   <Container>
   <Paper elevation={3} style={paperStyle}>
-    <h1 style={{color:"blue"}}><u>Add Meal</u></h1>
+    <h1 style={{color:"orange"}}>Add Meal</h1>
     <Box
       component="form"
       sx={{
@@ -50,11 +51,26 @@ export default function Meal() {
       <TextField id="outlined-basic" label="Meal Name" variant="outlined" fullWidth
       value={name}
       onChange={(e)=>setName(e.target.value)}/>
-      <TextField id="outlined-basic" label="Meal Type" variant="outlined" fullWidth
-      value={mealType}
-            onChange={(e)=>setType(e.target.value)}/>
+        <FormControl fullWidth variant="outlined">
+            <InputLabel id="meal-type-label">Meal Type</InputLabel>
+            <Select
+                labelId="meal-type-label"
+                id="outlined-select-mealType"
+                value={mealType}
+                onChange={(e) => setType(e.target.value)}
+                label="Meal Type"
+                variant={"outlined"}
+            >
+                <MenuItem value="BREAKFAST">Breakfast</MenuItem>
+                <MenuItem value="LUNCH">Lunch</MenuItem>
+                <MenuItem value="DINNER">Dinner</MenuItem>
+                <MenuItem value="SNACK">Snack</MenuItem>
+                <MenuItem value="DESSERT">Dessert</MenuItem>
+                <MenuItem value="DRINK">Drink</MenuItem>
+            </Select>
+        </FormControl>
 
-      <Button variant="contained" onClick={handleClick}>Enter</Button>
+      <Button variant="contained" color="inherit" onClick={handleClick}>Enter</Button>
     </Box>
 
     {name} for {mealType}
